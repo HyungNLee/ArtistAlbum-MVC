@@ -54,5 +54,17 @@ namespace Cd.Models
       _albums.Add(album);
     }
 
+    public static Artist FindAnArtistByName (string name)
+    {
+      foreach (Artist instance in _instances)
+      {
+        if (name == instance.GetName())
+        {
+          return instance;
+        }
+      }
+      Artist notFound = new Artist("Not Found");
+      return notFound;
+    }
   }
 }

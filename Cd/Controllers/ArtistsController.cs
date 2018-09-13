@@ -52,5 +52,20 @@ namespace Cd.Controllers
       newArtist.AddAlbum(newAlbum);
       return View("Details", newArtist);
     }
+
+    // [HttpPost("/FindAnArtist")]
+    // public ActionResult SearchAnArtist ()
+    // {
+    //   Artist foundArtist = Artist.FindAnArtistByName();
+    //   return View
+    // }
+    [HttpPost("/Artists/search")]
+    public ActionResult SearchByName ()
+    {
+      string name = Request.Form["name"];
+      // List<Artist> allArtists = Artist.GetAll();
+      Artist newArtist = Artist.FindAnArtistByName(name);
+      return View("Details", newArtist);
+    }
   }
 }
