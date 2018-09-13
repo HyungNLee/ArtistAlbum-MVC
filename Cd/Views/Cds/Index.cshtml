@@ -1,0 +1,10 @@
+<h1>Album List</h1>
+
+<ul>
+@foreach (var album in Model)
+{
+  <li>Album Name: @album.GetName() || ID #: @album.GetId()</li>
+}
+</ul>
+
+<a href="/Albums/CreateForm"><button class="btn btn-info">Enter a new album</button></a>

@@ -1,0 +1,16 @@
+<h1>@Model.GetName()</h1>
+@if (@Model.GetAlbums().Count == 0)
+{
+  <h3>No albums have been added yet!</h3>
+}
+else
+{
+@foreach (var album in @Model.GetAlbums())
+{
+  <h3>@album.GetName()</h3>
+}
+}
+
+
+<a href="/Artists/@Model.GetId()/Album/Create"><button class="btn btn-info">Enter a new album</button></a>
+<p><a href='/'>Back home</a></p>
